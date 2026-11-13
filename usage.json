@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-13",
+  "study_type": "exploratory_noncontrolled",
+  "units": "tokens_not_Plus_quota",
+  "raw_logs_published": false,
+  "parent_model": "gpt-6-astra",
+  "parent_boundary_counters": {
+    "before": {"input_tokens": 29103678, "cached_input_tokens": 27553664, "output_tokens": 126331, "total_tokens": 29230009},
+    "after": {"input_tokens": 30839314, "cached_input_tokens": 29276416, "output_tokens": 127386, "total_tokens": 30966700}
+  },
+  "runs": [
+    {"label": "old_skill_parent_delta", "model": "gpt-6-astra", "input_tokens": 1735636, "cached_input_tokens": 1722752, "output_tokens": 1055, "total_tokens": 1736691},
+    {"label": "old_skill_worker", "model": "gpt-6-luna", "input_tokens": 128228, "cached_input_tokens": 98048, "output_tokens": 2967, "total_tokens": 131195},
+    {"label": "control_worker_without_skill", "model": "gpt-6-astra", "input_tokens": 67386, "cached_input_tokens": 43776, "output_tokens": 2146, "total_tokens": 69532}
+  ],
+  "excluded": [
+    "Aborted CLI attempt: complete usage unavailable",
+    "Skill research/editing and publication overhead"
+  ],
+  "limitations": [
+    "Different context lengths and hosts",
+    "Different verification coverage",
+    "Input includes cached input; do not add it twice",
+    "Parent boundary includes coordination and follow-up, not only planning",
+    "No controlled repetitions, Plus deductions or API bills measured",
+    "Cannot attribute differences to the skill or predict savings for the revised skill"
+  ]
+}
