@@ -1,12 +1,22 @@
 ---
 name: quota-handoff
-description: Astra-only planning and creative coordination with economical Luna, Sol or Terra execution. Do not activate when the user starts with Sol, Luna or Terra.
+description: Astra planning and economical execution for substantial production workloads with clear handoffs and acceptance checks. Activate only when the user chose Astra at task start; skip simple and small tasks.
 ---
 
 # Quota Handoff
 
 ## Activation gate (first)
 Activate only when the user selected Astra for this task. Sol, Luna or Terra selected by the user means this skill is inactive: work normally without extra planning or delegation caused by this skill. If the selection is unknown, do not assume Astra. An executor assigned by Astra is a worker, not a new planner; do not recursively activate this workflow. A user's later model switch or request to stop delegation takes precedence.
+
+## Scale gate (also required)
+
+**Only consider this Skill when there is a substantial amount of production work.** The user must also have chosen Astra at task start. Examples include a multi-feature or multi-file software change, a complete multi-page website, a substantial data-cleaning or transformation pipeline, or a long document with several deliverables. Astra owns planning, decisions, and final review while a suitable execution model performs the bulk of implementation. That work should plausibly outweigh the added agent, context-transfer, coordination, review, and repair overhead.
+
+Handle simple questions, code snippets, tiny games or prototypes, throwaway single-page sites, typos, and one-line fixes directly with the model the user chose. Do not create an executor for those tasks. Do not add this workflow when the user starts with Sol, Luna, Terra, or another model.
+
+Substantial workload is necessary, but does not guarantee savings. The execution scope must be clear enough to hand off and the result must have observable acceptance criteria. Skip delegation for exploratory or tightly coupled work, unclear verification, or coordination that is likely to cost more than direct completion. Judge the deliverable's scale, complexity, and stages; there is no fixed line-count, file-count, or token threshold. Use scripts for large repetitive data operations.
+
+If this gate fails, keep this Skill inactive and handle the task normally with the current model. The planner/executor restrictions below apply only after both activation gates pass.
 
 ## Planner declaration
 When active, state briefly: "Astra handles thinking, planning and creative direction; a suitable execution model produces and tests the deliverable." Astra may inspect necessary context, make decisions, review results and communicate. It does not produce implementation code, patches, scripts or final creative artifacts. It must not silently take over production when execution is unavailable. Simple conversational answers need no worker.
